@@ -64,6 +64,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,6 +84,21 @@
       <Project>{b7c698ec-7bb9-4784-b233-477f3ac3fbeb}</Project>
       <Name>DuplicatesFinder.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viber image 2019-03-27 , 11.46.14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\read-ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\read-this-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help-desk-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
