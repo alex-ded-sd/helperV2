@@ -1,6 +1,5 @@
 ﻿namespace DuplicatesFinder.Core
 {
-	using System;
 	using System.Collections.Generic;
 	using System.Diagnostics;
 	using System.IO;
@@ -34,16 +33,22 @@
 				ExcelWorksheet workSheet = package.Workbook.Worksheets[sheetName];
 				int totalRows = workSheet.Dimension.Rows;
 				for (int i = 2; i <= totalRows; i++) {
-					records.Add(new Entity
-					{
-						Singer = workSheet.Cells[i, 2].Value.ToString(),
-						Name = workSheet.Cells[i, 3].Value.ToString(),
-						Album = workSheet.Cells[i, 4].Value.ToString(),
-						Count = (double) workSheet.Cells[i, 6].Value,
-					});
+					if (!IsEmptyRow(workSheet.Cells, i, new [] {2, 3, 4})) {
+						records.Add(new Entity
+						{
+							Singer = workSheet.Cells[i, 2].Value.ToString(),
+							Name = workSheet.Cells[i, 3].Value.ToString(),
+							Album = workSheet.Cells[i, 4].Value.ToString(),
+							Count = (double) workSheet.Cells[i, 6].Value,
+						});
+					}
 				}
 			}
 			return records;
+		}
+
+		private bool IsEmptyRow(ExcelRange workSheetCells, int rowNumber, int[] columnsIndex) {
+			return columnsIndex.Any(index => workSheetCells[rowNumber, index].Value == null);
 		}
 
 		public void SaveAndShowAsExcelFile(List<Entity> uniqueRecords) {
