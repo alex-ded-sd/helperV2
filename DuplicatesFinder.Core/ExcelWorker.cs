@@ -39,7 +39,8 @@
 							Singer = workSheet.Cells[i, 2].Value.ToString(),
 							Name = workSheet.Cells[i, 3].Value.ToString(),
 							Album = workSheet.Cells[i, 4].Value.ToString(),
-							Count = (double) workSheet.Cells[i, 6].Value,
+							IsrcCode = workSheet.Cells[i, 5].Value.ToString(),
+							Count = (double) workSheet.Cells[i, 6].Value
 						});
 					}
 				}
@@ -60,7 +61,8 @@
 					uniqueRecordsSheet.Cells[row, 1].Value = uniqueRecord.Singer;
 					uniqueRecordsSheet.Cells[row, 2].Value = uniqueRecord.Name;
 					uniqueRecordsSheet.Cells[row, 3].Value = uniqueRecord.Album;
-					uniqueRecordsSheet.Cells[row, 4].Value = uniqueRecord.Count;
+					uniqueRecordsSheet.Cells[row, 4].Value = uniqueRecord.IsrcCode;
+					uniqueRecordsSheet.Cells[row, 5].Value = uniqueRecord.Count;
 					row++;
 				}
 				

@@ -11,6 +11,7 @@
 			Singer = item.Singer.Clone().ToString();
 			Name = item.Name.Clone().ToString();
 			Album = item.Album.Clone().ToString();
+			IsrcCode = item.IsrcCode.Clone().ToString();
 			Count = item.Count;
 		}
 
@@ -19,7 +20,10 @@
 		}
 
 		protected bool Equals(Entity other) {
-			return string.Equals(Singer, other.Singer, StringComparison.OrdinalIgnoreCase) && string.Equals(Name, other.Name, StringComparison.OrdinalIgnoreCase) && string.Equals(Album, other.Album, StringComparison.OrdinalIgnoreCase);
+			return string.Equals(Singer, other.Singer, StringComparison.OrdinalIgnoreCase)
+			       && string.Equals(Name, other.Name, StringComparison.OrdinalIgnoreCase)
+			       && string.Equals(IsrcCode, other.IsrcCode, StringComparison.OrdinalIgnoreCase)
+			       && string.Equals(Album, other.Album, StringComparison.OrdinalIgnoreCase);
 		}
 
 
@@ -36,6 +40,8 @@
 		public string Name { get; set; }
 
 		public string Album { get; set; }
+
+		public string IsrcCode { get; set; }
 
 		public double Count { get; set; }
 
